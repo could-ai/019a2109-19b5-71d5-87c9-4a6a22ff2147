@@ -14,6 +14,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await AudioService.init(
+    builder: () => AudioPlayerHandler(),
     config: const AudioServiceConfig(
       androidNotificationChannelId: 'com.example.beats.audio',
       androidNotificationChannelName: 'Beats Audio Playback',
